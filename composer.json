@@ -19,8 +19,8 @@
     },
     "autoload": {
         "psr-4": {
-            "intec\\response-helper\\": "src/",
-            "intec\\response-helper\\Tests\\": "tests/"
+            "response-helper\\": "src/",
+            "response-helper\\Tests\\": "tests/"
         }
     }
 }

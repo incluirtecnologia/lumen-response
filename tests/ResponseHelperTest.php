@@ -1,7 +1,9 @@
 <?php
 
+namespace Tests\ResponseHelperTest;
+
 use PHPUnit\Framework\TestCase;
-use Intec\ResponseHelper;
+use ResponseHelper;
 /**
 *  Corresponding Class to test YourClass class
 *
@@ -29,7 +31,8 @@ class ResponseHelperTest extends TestCase
 
   public function testSuccessResponse()
   {
-    return true;
+    $response = ResponseHelper::successResponse();
+    $response->assertOk();
   }
 
   public function testErrorResponse()

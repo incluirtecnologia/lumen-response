@@ -1,6 +1,6 @@
 <?php
 
-namespace Intec\ResponseHelper;
+namespace ResponseHelper;
 
 use Illuminate\Http\Response;
 
