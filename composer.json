@@ -1,0 +1,26 @@
+{
+    "name": "intec/hesponse-helper",
+    "description": "Response Helper",
+    "keywords": ["http", "response", "helper"],
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Kelvin Amancio",
+            "email": "kelvin013@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.1.3",
+        "illuminate/http": "5.7.*"
+    },
+    "require-dev": {
+		"phpunit/phpunit": "6.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "intec\\response-helper\\": "src/",
+            "intec\\response-helper\\Tests\\": "tests/"
+        }
+    }
+}
