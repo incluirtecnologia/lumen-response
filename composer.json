@@ -1,7 +1,7 @@
 {
-    "name": "intec/hesponse-helper",
+    "name": "intec/response",
     "description": "Response Helper",
-    "keywords": ["http", "response", "helper"],
+    "keywords": ["http", "response", "helper", "lumen"],
     "license": "MIT",
     "type": "library",
     "authors": [
@@ -12,15 +12,20 @@
     ],
     "require": {
         "php": ">=7.1.3",
-        "illuminate/http": "5.7.*"
+        "illuminate/http": "5.7.*",
+        "laravel/lumen-framework": "5.7.*"
     },
     "require-dev": {
-		"phpunit/phpunit": "6.*"
+		"phpunit/phpunit": "~7.5"
     },
     "autoload": {
         "psr-4": {
-            "response-helper\\": "src/",
-            "response-helper\\Tests\\": "tests/"
+            "Intec\\Response\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Intec\\Response\\Tests\\": "tests/"
         }
     }
 }

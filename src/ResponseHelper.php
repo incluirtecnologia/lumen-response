@@ -1,6 +1,6 @@
 <?php
 
-namespace ResponseHelper;
+namespace Intec\Response;
 
 use Illuminate\Http\Response;
 
@@ -12,7 +12,8 @@ use Illuminate\Http\Response;
 *
 *  @author KelvinAmancio
 */
-class ResponseHelper{
+trait ResponseHelper
+{
    /**
      * Format success responses
      *

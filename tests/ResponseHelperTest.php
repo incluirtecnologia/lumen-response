@@ -1,9 +1,10 @@
 <?php
 
-namespace Tests\ResponseHelperTest;
+namespace Intec\Response\Tests;
 
 use PHPUnit\Framework\TestCase;
-use ResponseHelper;
+use Intec\Response\ResponseHelper;
+
 /**
 *  Corresponding Class to test YourClass class
 *
@@ -15,42 +16,28 @@ use ResponseHelper;
 class ResponseHelperTest extends TestCase
 {
 
-  /**
-  * Just check if the YourClass has no syntax error
-  *
-  * This is just a simple check to make sure your library has no syntax error. This helps you troubleshoot
-  * any typo before you even use this library in a real project.
-  *
-  */
-/*   public function testIsThereAnySyntaxError()
-  {
-	$var = new Buonzz\Template\YourClass;
-	$this->assertTrue(is_object($var));
-	unset($var);
-  } */
+  use ResponseHelper;
 
   public function testSuccessResponse()
   {
-    $response = ResponseHelper::successResponse();
-    $response->assertOk();
+    $data = 'ok';
+    $code = 200;
+    $response = $this->successResponse($data, $code);
+
+    $this->assertTrue(is_object($response));
+    $this->assertEquals($code, $response->getStatusCode());
+    $this->assertEquals('{"data":"ok"}', $response->getContent());
   }
 
   public function testErrorResponse()
   {
-    return true;
+    $message = 'Error';
+    $code = 400;
+    $response = $this->errorResponse($message, $code);
+
+    $this->assertTrue(is_object($response));
+    $this->assertEquals($code, $response->getStatusCode());
+    $this->assertEquals('{"error":"Error","code":400}', $response->getContent());
   }
 
-  /**
-  * Just check if the YourClass has no syntax error
-  *
-  * This is just a simple check to make sure your library has no syntax error. This helps you troubleshoot
-  * any typo before you even use this library in a real project.
-  *
-  */
-/*   public function testMethod1()
-  {
-	$var = new Buonzz\Template\YourClass;
-	$this->assertTrue($var->method1("hey") == 'Hello World');
-	unset($var);
-  } */
 }
